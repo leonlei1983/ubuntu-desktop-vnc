@@ -6,7 +6,10 @@ ADD vnc-passwd /root/
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends ubuntu-desktop && \
 	apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal vnc4server && \
-	vncpasswd < /root/vnc-passwd
+	apt-get autoclean && \
+	apt-get autoremove && \
+	rm -rf /var/lib/apt/lists/* && \
+	/usr/bin/vncpasswd < /root/vnc-passwd
 
 ADD vncserver /usr/bin/
 
