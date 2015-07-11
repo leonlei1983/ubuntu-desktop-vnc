@@ -4,7 +4,7 @@ MAINTAINER Leon Lei <leonlei1983@gmail.com>
 ADD vnc-passwd /root/
 ADD vncserver /usr/bin/
 ADD noVNC /root/noVNC/
-ADD startup.sh /usr/local/bin/
+ADD startup.sh /
 
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends ubuntu-desktop && \
@@ -16,4 +16,4 @@ RUN apt-get update && \
 	rm /root/vnc-passwd
 
 EXPOSE 6080
-CMD ['/usr/local/bin/startup.sh']
+ENTRYPOINT ["/startup.sh"]
