@@ -59,6 +59,7 @@ $defaultXStartup
        "gnome-settings-daemon &\n".
        "metacity &\n".
        "nautilus &\n".
+       "gnome-terminal &\n".
        "[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup\n".
        "[ -r \$HOME/.Xresources ] && xrdb \$HOME/.Xresources\n".
        "xsetroot -solid grey\n".
