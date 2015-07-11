@@ -3,7 +3,7 @@ MAINTAINER Leon Lei <leonlei1983@gmail.com>
 
 ADD vnc-passwd /root/
 ADD vncserver /usr/bin/
-ADD noVNC /root/
+ADD noVNC /root/noVNC/
 ADD startup.sh /usr/local/bin/
 
 RUN apt-get update && \
@@ -16,4 +16,4 @@ RUN apt-get update && \
 	rm /root/vnc-passwd
 
 EXPOSE 6080
-CMD ['startup.sh']
+CMD ['/usr/local/bin/startup.sh']
