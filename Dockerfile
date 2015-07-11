@@ -2,6 +2,7 @@ FROM leonlei1983/ubuntu
 MAINTAINER Leon Lei <leonlei1983@gmail.com>
 
 ADD vnc-passwd /root/
+ADD vncserver /usr/bin/
 
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends ubuntu-desktop && \
@@ -9,9 +10,8 @@ RUN apt-get update && \
 	apt-get autoclean && \
 	apt-get autoremove && \
 	rm -rf /var/lib/apt/lists/* && \
+	chmod +x /usr/bin/vncserver && \
 	/usr/bin/vncpasswd < /root/vnc-passwd
-
-ADD vncserver /usr/bin/
 
 # EXPOSE 5901
 # CMD ['/usr/bin/vncserver', ':1']
