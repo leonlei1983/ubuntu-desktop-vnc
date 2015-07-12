@@ -8,7 +8,7 @@ ADD startup.sh /
 
 RUN apt-get update && \
 	apt-get install -y --no-install-recommends ubuntu-desktop && \
-	apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal vnc4server && \
+	apt-get install -y gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal vnc4server firefox && \
 	apt-get autoclean && \
 	apt-get autoremove && \
 	rm -rf /var/lib/apt/lists/* && \
